@@ -1,0 +1,27 @@
+# permissions for end users to view avesturas.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: avestura-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: avestura-operator
+    app.kubernetes.io/part-of: avestura-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: avestura-viewer-role
+rules:
+- apiGroups:
+  - general.k8s.avestura.dev
+  resources:
+  - avesturas
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - general.k8s.avestura.dev
+  resources:
+  - avesturas/status
+  verbs:
+  - get

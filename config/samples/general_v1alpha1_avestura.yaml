@@ -1,0 +1,12 @@
+apiVersion: general.k8s.avestura.dev/v1alpha1
+kind: Avestura
+metadata:
+  labels:
+    app.kubernetes.io/name: avestura
+    app.kubernetes.io/instance: avestura-sample
+    app.kubernetes.io/part-of: avestura-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: avestura-operator
+  name: avestura-sample
+spec:
+  # TODO(user): Add fields here
